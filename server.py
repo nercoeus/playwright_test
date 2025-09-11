@@ -162,6 +162,9 @@ class PlaywrightWebProxyServer:
                 # 特殊字符处理：对于@等特殊字符，直接使用type方法
                 if key == '@':
                     await self.page.keyboard.type('@')
+                # 对于大写字母，直接使用type方法（浏览器已经处理了Shift）
+                elif len(key) == 1 and key.isupper():
+                    await self.page.keyboard.type(key)
                 # 如果有修饰键或者是特殊按键，使用press方法
                 elif modifiers or len(key) > 1:
                     await self.page.keyboard.press(key, modifiers=modifiers)
