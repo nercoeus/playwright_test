@@ -16,15 +16,15 @@ class PlaywrightWebProxyServer {
                 methods: ["GET", "POST"]
             }
         });
-        
+
         this.browser = null;
         this.page = null;
         this.clients = new Map();
-        
+
         // 初始化日志文件
         this.logFile = path.join(__dirname, 'playwright-logs.txt');
         this.initLogFile();
-        
+
         this.init();
     }
 
@@ -41,7 +41,7 @@ class PlaywrightWebProxyServer {
     writeLog(message) {
         const timestamp = new Date().toLocaleString();
         const logMessage = `[${timestamp}] ${message}\n`;
-        
+
         // 同时输出到控制台和文件
         console.log(message);
         fs.appendFileSync(this.logFile, logMessage);
@@ -66,8 +66,8 @@ class PlaywrightWebProxyServer {
         });
 
         this.app.get('/health', (req, res) => {
-            res.json({ 
-                status: 'ok', 
+            res.json({
+                status: 'ok',
                 browser: this.browser ? 'connected' : 'disconnected',
                 clients: this.clients.size
             });
@@ -146,10 +146,10 @@ class PlaywrightWebProxyServer {
                 try {
                     this.writeLog(`点击坐标: (${data.x}, ${data.y})`);
                     await this.page.mouse.click(data.x, data.y);
-                    
+
                     // 等待页面可能的变化
                     await this.page.waitForTimeout(500);
-                    
+
                     const screenshot = await this.takeScreenshot();
                     socket.emit('screenshot', { screenshot });
                 } catch (error) {
@@ -173,7 +173,7 @@ class PlaywrightWebProxyServer {
             socket.on('keydown', async (data) => {
                 try {
                     this.writeLog(`按键: ${data.key}`);
-                    
+
                     // 处理特殊按键
                     if (data.key.length === 1) {
                         // 普通字符
@@ -185,13 +185,13 @@ class PlaywrightWebProxyServer {
                         if (data.shiftKey) modifiers.push('Shift');
                         if (data.altKey) modifiers.push('Alt');
                         if (data.metaKey) modifiers.push('Meta');
-                        
+
                         await this.page.keyboard.press(data.key, { modifiers });
                     }
-                    
+
                     // 等待可能的页面变化
                     await this.page.waitForTimeout(300);
-                    
+
                     const screenshot = await this.takeScreenshot();
                     socket.emit('screenshot', { screenshot });
                 } catch (error) {
@@ -228,9 +228,9 @@ class PlaywrightWebProxyServer {
                     '--disable-gpu'
                 ]
             });
-            
+
             this.page = await this.browser.newPage();
-            
+
             // 监听请求事件，记录 header 信息到文件
             this.page.on('request', request => {
                 let logMessage = '\n=== 请求信息 ===';
@@ -244,7 +244,7 @@ class PlaywrightWebProxyServer {
                 logMessage += '\n==================\n';
                 this.writeLog(logMessage);
             });
-            
+
             // 监听响应事件，记录响应信息到文件
             this.page.on('response', response => {
                 let logMessage = '\n=== 响应信息 ===';
@@ -259,15 +259,15 @@ class PlaywrightWebProxyServer {
                 logMessage += '\n==================\n';
                 this.writeLog(logMessage);
             });
-            
+
             // 设置视口大小
             await this.page.setViewportSize({ width: 1280, height: 720 });
-            
+
             // 设置用户代理
             await this.page.setExtraHTTPHeaders({
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
             });
-            
+
             this.writeLog('浏览器初始化完成');
         } catch (error) {
             console.error('浏览器初始化失败:', error);
@@ -279,17 +279,17 @@ class PlaywrightWebProxyServer {
         if (!this.page) {
             throw new Error('浏览器未初始化');
         }
-        
+
         try {
-            await this.page.goto(url, { 
+            await this.page.goto(url, {
                 waitUntil: 'networkidle',
-                timeout: 30000 
+                timeout: 30000
             });
         } catch (error) {
             // 如果网络空闲等待失败，尝试等待加载完成
-            await this.page.goto(url, { 
+            await this.page.goto(url, {
                 waitUntil: 'load',
-                timeout: 30000 
+                timeout: 30000
             });
         }
     }
@@ -298,17 +298,17 @@ class PlaywrightWebProxyServer {
         if (!this.page) {
             throw new Error('浏览器未初始化');
         }
-        
-        const screenshot = await this.page.screenshot({ 
+
+        const screenshot = await this.page.screenshot({
             type: 'png',
             fullPage: true
         });
-        
+
         return screenshot.toString('base64');
     }
 
     startServer() {
-        const PORT = process.env.PORT || 3000;
+        const PORT = process.env.PORT || 9097;
         this.server.listen(PORT, () => {
             this.writeLog(`🚀 服务器运行在 http://localhost:${PORT}`);
             this.writeLog(`📱 打开浏览器访问上述地址开始使用`);

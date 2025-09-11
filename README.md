@@ -28,7 +28,7 @@ npm run install-browsers
 npm start
 ```
 
-4. 打开浏览器访问：`http://localhost:3000`
+4. 打开浏览器访问：`http://localhost:9097`
 
 ## 技术架构
 
