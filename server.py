@@ -62,6 +62,14 @@ class PlaywrightWebProxyServer:
         async def websocket_endpoint(websocket: WebSocket):
             await self.handle_websocket(websocket)
     
+    async def safe_send_message(self, websocket: WebSocket, message: dict):
+        """安全发送WebSocket消息"""
+        try:
+            if websocket.client_state.name == 'CONNECTED':
+                await websocket.send_text(json.dumps(message))
+        except Exception as e:
+            self.write_log(f"发送消息失败: {str(e)}")
+    
     async def handle_websocket(self, websocket: WebSocket):
         """处理WebSocket连接"""
         await websocket.accept()
@@ -76,7 +84,8 @@ class PlaywrightWebProxyServer:
                 await self.handle_message(websocket, message)
         except WebSocketDisconnect:
             self.write_log(f"客户端断开连接: {client_id}")
-            del self.clients[client_id]
+            if client_id in self.clients:
+                del self.clients[client_id]
         except Exception as e:
             self.write_log(f"WebSocket错误: {str(e)}")
             if client_id in self.clients:
@@ -93,46 +102,46 @@ class PlaywrightWebProxyServer:
                 self.write_log(f"导航到: {url}")
                 await self.navigate_to_url(url)
                 screenshot = await self.take_screenshot()
-                await websocket.send_text(json.dumps({
+                await self.safe_send_message(websocket, {
                     'type': 'navigation-complete',
                     'data': {'url': url}
-                }))
-                await websocket.send_text(json.dumps({
+                })
+                await self.safe_send_message(websocket, {
                     'type': 'screenshot',
                     'data': {'screenshot': screenshot}
-                }))
+                })
             
             elif msg_type == 'refresh':
                 self.write_log('刷新页面')
                 await self.page.reload()
                 screenshot = await self.take_screenshot()
-                await websocket.send_text(json.dumps({
+                await self.safe_send_message(websocket, {
                     'type': 'screenshot',
                     'data': {'screenshot': screenshot}
-                }))
+                })
             
             elif msg_type == 'go-back':
                 await self.page.go_back()
                 screenshot = await self.take_screenshot()
-                await websocket.send_text(json.dumps({
+                await self.safe_send_message(websocket, {
                     'type': 'screenshot',
                     'data': {'screenshot': screenshot}
-                }))
+                })
             
             elif msg_type == 'go-forward':
                 await self.page.go_forward()
                 screenshot = await self.take_screenshot()
-                await websocket.send_text(json.dumps({
+                await self.safe_send_message(websocket, {
                     'type': 'screenshot',
                     'data': {'screenshot': screenshot}
-                }))
+                })
             
             elif msg_type == 'screenshot':
                 screenshot = await self.take_screenshot()
-                await websocket.send_text(json.dumps({
+                await self.safe_send_message(websocket, {
                     'type': 'screenshot',
                     'data': {'screenshot': screenshot}
-                }))
+                })
             
             elif msg_type == 'click':
                 x, y = data.get('x', 0), data.get('y', 0)
@@ -140,10 +149,10 @@ class PlaywrightWebProxyServer:
                 await self.page.mouse.click(x, y)
                 await self.page.wait_for_timeout(500)
                 screenshot = await self.take_screenshot()
-                await websocket.send_text(json.dumps({
+                await self.safe_send_message(websocket, {
                     'type': 'screenshot',
                     'data': {'screenshot': screenshot}
-                }))
+                })
             
             elif msg_type == 'scroll':
                 x, y = data.get('x', 0), data.get('y', 0)
@@ -191,16 +200,16 @@ class PlaywrightWebProxyServer:
                 
                 await self.page.wait_for_timeout(300)
                 screenshot = await self.take_screenshot()
-                await websocket.send_text(json.dumps({
+                await self.safe_send_message(websocket, {
                     'type': 'screenshot',
                     'data': {'screenshot': screenshot}
-                }))
+                })
         
         except Exception as e:
-            await websocket.send_text(json.dumps({
+            await self.safe_send_message(websocket, {
                 'type': 'error',
                 'data': {'message': str(e)}
-            }))
+            })
     
     async def init_browser(self):
         """初始化浏览器"""
@@ -235,6 +244,7 @@ class PlaywrightWebProxyServer:
     
     def log_request(self, request):
         """记录请求信息"""
+        return
         log_message = f"\n=== 请求信息 ===\nURL: {request.url}\n方法: {request.method}\n请求头:\n"
         for key, value in request.headers.items():
             log_message += f"  {key}: {value}\n"
@@ -243,10 +253,10 @@ class PlaywrightWebProxyServer:
     
     async def log_response(self, response):
         """记录响应信息"""
-        log_message = f"\n=== 响应信息 ===\nURL: {response.url}\n状态码: {response.status}\n状态文本: {response.status_text}\n响应头:\n"
-        for key, value in response.headers.items():
-            log_message += f"  {key}: {value}\n"
-        
+        # log_message = f"\n=== 响应信息 ===\nURL: {response.url}\n状态码: {response.status}\n状态文本: {response.status_text}\n响应头:\n"
+        # for key, value in response.headers.items():
+        #     log_message += f"  {key}: {value}\n"
+        log_message = f""
         # 打印浏览器上下文的storage_state
         if self.browser and hasattr(self, 'page') and self.page:
             try:
