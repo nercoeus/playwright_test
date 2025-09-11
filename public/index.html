@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playwright Web Proxy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .header {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .url-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .url-input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .url-input:focus {
+            border-color: #2563eb;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .status {
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .status.connecting {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status.connected {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .screenshot-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .screenshot {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            cursor: crosshair;
+        }
+
+        .loading {
+            padding: 40px;
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        .placeholder {
+            padding: 60px 20px;
+            color: #9ca3af;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">🌐 Playwright Web Proxy</div>
+        
+        <div class="url-bar">
+            <input type="text" id="urlInput" class="url-input" placeholder="输入网址，例如：https://www.baidu.com" value="https://www.baidu.com">
+            <button id="goBtn" class="btn">访问</button>
+        </div>
+        
+        <div class="controls">
+            <button id="refreshBtn" class="btn" disabled>刷新</button>
+            <button id="backBtn" class="btn" disabled>后退</button>
+            <button id="forwardBtn" class="btn" disabled>前进</button>
+            <button id="screenshotBtn" class="btn" disabled>截图</button>
+        </div>
+        
+        <div id="status" class="status connecting">正在连接服务器...</div>
+    </div>
+
+    <div class="main">
+        <div class="screenshot-container">
+            <div id="loading" class="loading" style="display: none;">正在加载页面...</div>
+            <div id="placeholder" class="placeholder">在上方输入网址开始浏览</div>
+            <img id="screenshot" class="screenshot" style="display: none;">
+        </div>
+    </div>
+
+    <script>
+        class WebProxyClient {
+            constructor() {
+                this.ws = null;
+                this.isConnected = false;
+                this.init();
+            }
+
+            init() {
+                this.connectWebSocket();
+                this.bindEvents();
+            }
+
+            connectWebSocket() {
+                const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+                const wsUrl = `${protocol}//${window.location.host}/ws`;
+                
+                this.ws = new WebSocket(wsUrl);
+                
+                this.ws.onopen = () => {
+                    this.isConnected = true;
+                    this.updateStatus('connected', '已连接到服务器');
+                    this.enableControls();
+                };
+                
+                this.ws.onmessage = (event) => {
+                    const message = JSON.parse(event.data);
+                    this.handleMessage(message);
+                };
+                
+                this.ws.onclose = () => {
+                    this.isConnected = false;
+                    this.updateStatus('error', '连接已断开');
+                    this.disableControls();
+                };
+                
+                this.ws.onerror = () => {
+                    this.updateStatus('error', '连接错误');
+                };
+            }
+
+            bindEvents() {
+                document.getElementById('goBtn').onclick = () => this.navigate();
+                document.getElementById('refreshBtn').onclick = () => this.refresh();
+                document.getElementById('backBtn').onclick = () => this.goBack();
+                document.getElementById('forwardBtn').onclick = () => this.goForward();
+                document.getElementById('screenshotBtn').onclick = () => this.takeScreenshot();
+                
+                document.getElementById('urlInput').onkeypress = (e) => {
+                    if (e.key === 'Enter') this.navigate();
+                };
+                
+                document.getElementById('screenshot').onclick = (e) => {
+                    if (e.target.src) {
+                        const rect = e.target.getBoundingClientRect();
+                        const x = (e.clientX - rect.left) * (e.target.naturalWidth / rect.width);
+                        const y = (e.clientY - rect.top) * (e.target.naturalHeight / rect.height);
+                        this.click(x, y);
+                    }
+                };
+                
+                // 全局键盘事件监听
+                document.addEventListener('keydown', (e) => {
+                    // 只有当焦点不在URL输入框时才处理键盘事件
+                    if (document.activeElement !== document.getElementById('urlInput')) {
+                        e.preventDefault();
+                        this.handleKeydown(e);
+                    }
+                });
+                
+                // 滚动事件监听
+                document.getElementById('screenshot').addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    const currentScrollY = window.scrollY || 0;
+                    const newScrollY = currentScrollY + e.deltaY;
+                    this.scroll(0, newScrollY);
+                });
+            }
+
+            sendMessage(type, data = {}) {
+                if (this.ws && this.isConnected) {
+                    this.ws.send(JSON.stringify({ type, data }));
+                }
+            }
+
+            handleMessage(message) {
+                switch (message.type) {
+                    case 'screenshot':
+                        this.showScreenshot(message.data.screenshot);
+                        break;
+                    case 'navigation-complete':
+                        this.hideLoading();
+                        break;
+                    case 'error':
+                        this.updateStatus('error', `错误: ${message.data.message}`);
+                        this.hideLoading();
+                        break;
+                }
+            }
+
+            navigate() {
+                const url = document.getElementById('urlInput').value.trim();
+                if (!url) return;
+                
+                this.showLoading();
+                this.sendMessage('navigate', { url });
+            }
+
+            refresh() {
+                this.showLoading();
+                this.sendMessage('refresh');
+            }
+
+            goBack() {
+                this.sendMessage('go-back');
+            }
+
+            goForward() {
+                this.sendMessage('go-forward');
+            }
+
+            takeScreenshot() {
+                this.sendMessage('screenshot');
+            }
+
+            click(x, y) {
+                this.sendMessage('click', { x, y });
+            }
+            
+            handleKeydown(e) {
+                const keyData = {
+                    key: e.key,
+                    ctrlKey: e.ctrlKey,
+                    shiftKey: e.shiftKey,
+                    altKey: e.altKey,
+                    metaKey: e.metaKey
+                };
+                this.sendMessage('keydown', keyData);
+            }
+            
+            scroll(x, y) {
+                this.sendMessage('scroll', { x, y });
+            }
+
+            showScreenshot(base64Data) {
+                const img = document.getElementById('screenshot');
+                const placeholder = document.getElementById('placeholder');
+                const loading = document.getElementById('loading');
+                
+                img.src = `data:image/png;base64,${base64Data}`;
+                img.style.display = 'block';
+                placeholder.style.display = 'none';
+                loading.style.display = 'none';
+            }
+
+            showLoading() {
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('placeholder').style.display = 'none';
+            }
+
+            hideLoading() {
+                document.getElementById('loading').style.display = 'none';
+            }
+
+            updateStatus(type, message) {
+                const status = document.getElementById('status');
+                status.className = `status ${type}`;
+                status.textContent = message;
+            }
+
+            enableControls() {
+                document.querySelectorAll('.btn').forEach(btn => btn.disabled = false);
+            }
+
+            disableControls() {
+                document.querySelectorAll('.btn').forEach(btn => btn.disabled = true);
+            }
+        }
+
+        // 启动应用
+        new WebProxyClient();
+    </script>
+</body>
+</html>
