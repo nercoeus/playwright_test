@@ -151,7 +151,7 @@ class PlaywrightWebProxyServer:
             
             elif msg_type == 'keydown':
                 key = data.get('key', '')
-                self.write_log(f"按键: {key}")
+                self.write_log(f"按键: {key} (长度: {len(key)})")
                 
                 modifiers = []
                 if data.get('ctrlKey'): modifiers.append('Control')
@@ -165,9 +165,26 @@ class PlaywrightWebProxyServer:
                 # 对于大写字母，直接使用type方法（浏览器已经处理了Shift）
                 elif len(key) == 1 and key.isupper():
                     await self.page.keyboard.type(key)
-                # 如果有修饰键或者是特殊按键，使用press方法
-                elif modifiers or len(key) > 1:
-                    await self.page.keyboard.press(key, modifiers=modifiers)
+                # 删除键特殊处理
+                elif key in ['Backspace', 'Delete']:
+                    self.write_log(f"处理删除键: {key}")
+                    await self.page.keyboard.press(key)
+                # 如果有修饰键，需要先按下修饰键，再按主键
+                elif modifiers:
+                    # 按下所有修饰键
+                    for modifier in modifiers:
+                        await self.page.keyboard.down(modifier)
+                    
+                    # 按下主键
+                    await self.page.keyboard.press(key)
+                    
+                    # 释放所有修饰键
+                    for modifier in reversed(modifiers):
+                        await self.page.keyboard.up(modifier)
+                # 特殊按键（如Enter、Tab等）
+                elif len(key) > 1:
+                    self.write_log(f"处理特殊按键: {key}")
+                    await self.page.keyboard.press(key)
                 else:
                     # 普通单字符输入使用type方法
                     await self.page.keyboard.type(key)
