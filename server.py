@@ -149,10 +149,10 @@ class PlaywrightWebProxyServer:
                 await self.page.mouse.click(x, y)
                 await self.page.wait_for_timeout(500)
                 screenshot = await self.take_screenshot()
-                await self.safe_send_message(websocket, {
+                await websocket.send_text(json.dumps({
                     'type': 'screenshot',
                     'data': {'screenshot': screenshot}
-                })
+                }))
             
             elif msg_type == 'scroll':
                 x, y = data.get('x', 0), data.get('y', 0)
@@ -200,16 +200,16 @@ class PlaywrightWebProxyServer:
                 
                 await self.page.wait_for_timeout(300)
                 screenshot = await self.take_screenshot()
-                await self.safe_send_message(websocket, {
+                await websocket.send_text(json.dumps({
                     'type': 'screenshot',
                     'data': {'screenshot': screenshot}
-                })
+                }))
         
         except Exception as e:
-            await self.safe_send_message(websocket, {
+            await websocket.send_text(json.dumps({
                 'type': 'error',
                 'data': {'message': str(e)}
-            })
+            }))
     
     async def init_browser(self):
         """初始化浏览器"""
