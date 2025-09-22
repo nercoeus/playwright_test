@@ -203,20 +203,24 @@
 
             bindEvents() {
                 document.getElementById('goBtn').onclick = () => this.navigate();
-                document.getElementById('refreshBtn').onclick = () => this.refresh();
-                document.getElementById('backBtn').onclick = () => this.goBack();
-                document.getElementById('forwardBtn').onclick = () => this.goForward();
-                document.getElementById('screenshotBtn').onclick = () => this.takeScreenshot();
                 
                 document.getElementById('urlInput').onkeypress = (e) => {
                     if (e.key === 'Enter') this.navigate();
                 };
+
+                // The following event listeners for commented-out buttons were causing errors
+                // and have been removed to ensure the screenshot click handler works correctly.
+                // document.getElementById('refreshBtn').onclick = () => this.refresh();
+                // document.getElementById('backBtn').onclick = () => this.goBack();
+                // document.getElementById('forwardBtn').onclick = () => this.goForward();
+                // document.getElementById('screenshotBtn').onclick = () => this.takeScreenshot();
                 
                 document.getElementById('screenshot').onclick = (e) => {
                     if (e.target.src) {
                         const rect = e.target.getBoundingClientRect();
                         const x = (e.clientX - rect.left) * (e.target.naturalWidth / rect.width);
                         const y = (e.clientY - rect.top) * (e.target.naturalHeight / rect.height);
+                        console.log(`Clicking at: ${x}, ${y}`);
                         this.click(x, y);
                     }
                 };
