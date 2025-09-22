@@ -1,66 +1,3125 @@
 
 
 === 新会话开始 ===
-启动时间: 2025-09-22 09:22:03
+启动时间: 2025-09-22 11:19:48
 
-[2025-09-22 09:22:03] 初始化 Playwright 浏览器...
-[2025-09-22 09:22:04] 浏览器初始化完成
-[2025-09-22 09:22:04] 🚀 服务器运行在 http://localhost:3000
-[2025-09-22 09:22:04] 📱 打开浏览器访问上述地址开始使用
-[2025-09-22 09:22:04] 📝 日志文件位置: /Users/bytedance/Desktop/demo/playwright-logs.txt
-[2025-09-22 09:23:52] 清理资源...
+[2025-09-22 11:19:48] 初始化 Playwright 浏览器...
+[2025-09-22 11:19:48] 浏览器初始化完成
+[2025-09-22 11:19:48] 🚀 服务器运行在 http://localhost:9098
+[2025-09-22 11:19:48] 📱 打开浏览器访问上述地址开始使用
+[2025-09-22 11:19:48] 📝 日志文件位置: /Users/bytedance/Desktop/demo/playwright-logs.txt
+[2025-09-22 11:19:50] 客户端连接: 4384614576
+[2025-09-22 11:19:51] 导航到: https://seller.tiktokshopglobalselling.com/account/login?shop_region=JP&redirect_url=https%3A%2F%2Fseller.tiktokshopglobalselling.com%2Fhomepage%3Fshop_region%3DJP
+[2025-09-22 11:19:51] 
+=== Storage Cookie ===
+[]
+==================
 
+[2025-09-22 11:19:53] 
+=== Storage Cookie ===
+[
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
 
-=== 新会话开始 ===
-启动时间: 2025-09-22 09:23:54
+[2025-09-22 11:19:54] 
+=== Storage Cookie ===
+[
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047194,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  }
+]
+==================
 
-[2025-09-22 09:23:54] 初始化 Playwright 浏览器...
-[2025-09-22 09:23:54] 浏览器初始化完成
-[2025-09-22 09:23:54] 🚀 服务器运行在 http://localhost:3000
-[2025-09-22 09:23:54] 📱 打开浏览器访问上述地址开始使用
-[2025-09-22 09:23:54] 📝 日志文件位置: /Users/bytedance/Desktop/demo/playwright-logs.txt
-[2025-09-22 09:26:07] 清理资源...
+[2025-09-22 11:19:54] 
+=== Storage Cookie ===
+[
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047194,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
 
+[2025-09-22 11:19:54] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759115994.872134,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047194,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
 
-=== 新会话开始 ===
-启动时间: 2025-09-22 09:26:08
+[2025-09-22 11:19:56] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759115994.872134,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047194,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
 
-[2025-09-22 09:26:08] 初始化 Playwright 浏览器...
-[2025-09-22 09:26:09] 浏览器初始化完成
-[2025-09-22 09:26:09] 🚀 服务器运行在 http://localhost:3000
-[2025-09-22 09:26:09] 📱 打开浏览器访问上述地址开始使用
-[2025-09-22 09:26:09] 📝 日志文件位置: /Users/bytedance/Desktop/demo/playwright-logs.txt
-[2025-09-22 09:28:04] 清理资源...
+[2025-09-22 11:19:56] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759115994.872134,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047194,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047195.677824,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
 
+[2025-09-22 11:19:56] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759115994.872134,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047194,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047195.677824,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "XZcaEfpJOp94RPKAAiwzvEMt74yfsZv5GUsXbmX11AdzO9p6LBQwKQc6OvtdtXb5ZGHSEPFFlc-MqCkiHQFzRZGJ5hs0HIy5BD7M6BMKpP4=",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375196.374901,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
 
-=== 新会话开始 ===
-启动时间: 2025-09-22 09:28:05
+[2025-09-22 11:19:57] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759115994.872134,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047194,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047195.677824,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "XZcaEfpJOp94RPKAAiwzvEMt74yfsZv5GUsXbmX11AdzO9p6LBQwKQc6OvtdtXb5ZGHSEPFFlc-MqCkiHQFzRZGJ5hs0HIy5BD7M6BMKpP4=",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375196.374901,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
 
-[2025-09-22 09:28:05] 初始化 Playwright 浏览器...
-[2025-09-22 09:28:06] 浏览器初始化完成
-[2025-09-22 09:28:06] 🚀 服务器运行在 http://localhost:3000
-[2025-09-22 09:28:06] 📱 打开浏览器访问上述地址开始使用
-[2025-09-22 09:28:06] 📝 日志文件位置: /Users/bytedance/Desktop/demo/playwright-logs.txt
-[2025-09-22 09:31:49] 清理资源...
+[2025-09-22 11:19:57] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759115994.872134,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047194,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047195.677824,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "YH1pjVf58_Y5fbc4_LZtWrRQREPTI_fqoWO2ENxErDpnRGs8x6-qpKo2R8oz82SV5ApqoIdmFi_UW1hA_a1jUM97mx4QFPNpkAWqjMX4oopyI15jynVctHOPhKrf-OaTq4jIynavHg==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375197.085569,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "YH1pjVf58_Y5fbc4_LZtWrRQREPTI_fqoWO2ENxErDpnRGs8x6-qpKo2R8oz82SV5ApqoIdmFi_UW1hA_a1jUM97mx4QFPNpkAWqjMX4oopyI15jynVctHOPhKrf-OaTq4jIynavHg==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287197,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
 
+[2025-09-22 11:19:57] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759115994.872134,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047194,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "YH1pjVf58_Y5fbc4_LZtWrRQREPTI_fqoWO2ENxErDpnRGs8x6-qpKo2R8oz82SV5ApqoIdmFi_UW1hA_a1jUM97mx4QFPNpkAWqjMX4oopyI15jynVctHOPhKrf-OaTq4jIynavHg==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375197.085569,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "YH1pjVf58_Y5fbc4_LZtWrRQREPTI_fqoWO2ENxErDpnRGs8x6-qpKo2R8oz82SV5ApqoIdmFi_UW1hA_a1jUM97mx4QFPNpkAWqjMX4oopyI15jynVctHOPhKrf-OaTq4jIynavHg==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287197,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047197.102718,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
 
-=== 新会话开始 ===
-启动时间: 2025-09-22 09:31:50
+[2025-09-22 11:19:57] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759115994.872134,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047197,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "YH1pjVf58_Y5fbc4_LZtWrRQREPTI_fqoWO2ENxErDpnRGs8x6-qpKo2R8oz82SV5ApqoIdmFi_UW1hA_a1jUM97mx4QFPNpkAWqjMX4oopyI15jynVctHOPhKrf-OaTq4jIynavHg==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375197.085569,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "YH1pjVf58_Y5fbc4_LZtWrRQREPTI_fqoWO2ENxErDpnRGs8x6-qpKo2R8oz82SV5ApqoIdmFi_UW1hA_a1jUM97mx4QFPNpkAWqjMX4oopyI15jynVctHOPhKrf-OaTq4jIynavHg==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287197,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047197.102718,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
 
-[2025-09-22 09:31:50] 初始化 Playwright 浏览器...
-[2025-09-22 09:31:51] 浏览器初始化完成
-[2025-09-22 09:31:51] 🚀 服务器运行在 http://localhost:3000
-[2025-09-22 09:31:51] 📱 打开浏览器访问上述地址开始使用
-[2025-09-22 09:31:51] 📝 日志文件位置: /Users/bytedance/Desktop/demo/playwright-logs.txt
-[2025-09-22 09:35:37] 清理资源...
+[2025-09-22 11:19:57] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759115994.872134,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047197,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "YH1pjVf58_Y5fbc4_LZtWrRQREPTI_fqoWO2ENxErDpnRGs8x6-qpKo2R8oz82SV5ApqoIdmFi_UW1hA_a1jUM97mx4QFPNpkAWqjMX4oopyI15jynVctHOPhKrf-OaTq4jIynavHg==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375197.085569,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "YH1pjVf58_Y5fbc4_LZtWrRQREPTI_fqoWO2ENxErDpnRGs8x6-qpKo2R8oz82SV5ApqoIdmFi_UW1hA_a1jUM97mx4QFPNpkAWqjMX4oopyI15jynVctHOPhKrf-OaTq4jIynavHg==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287197,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511198%7C1a27596f11c88c4ea8bb826e8ee12d8b90d045ca4858442f8efaad6fae09ae4c",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047197.925325,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
 
+[2025-09-22 11:20:01] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759115994.872134,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047197,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511198%7C1a27596f11c88c4ea8bb826e8ee12d8b90d045ca4858442f8efaad6fae09ae4c",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047197.925325,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "wGQ5qQLAucG3iWZaNaoozuT8X2sNAk_sOwsZQjXRHL4s1Cs7X_QwW3hYrFu2_m48wPT_Xf5YJFaxp4HnmDCQU7l8XL0QqxLoY1f-15UMjFkqMMzya7JRZ-yOrVR_M6A98XbldlvqoQ==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375201.047564,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "wGQ5qQLAucG3iWZaNaoozuT8X2sNAk_sOwsZQjXRHL4s1Cs7X_QwW3hYrFu2_m48wPT_Xf5YJFaxp4HnmDCQU7l8XL0QqxLoY1f-15UMjFkqMMzya7JRZ-yOrVR_M6A98XbldlvqoQ==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287201,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
 
-=== 新会话开始 ===
-启动时间: 2025-09-22 09:35:38
+[2025-09-22 11:20:07] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759115994.872134,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115992.709418,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047197,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511198%7C1a27596f11c88c4ea8bb826e8ee12d8b90d045ca4858442f8efaad6fae09ae4c",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047197.925325,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375207.029667,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287207,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
 
-[2025-09-22 09:35:38] 初始化 Playwright 浏览器...
-[2025-09-22 09:35:38] 浏览器初始化完成
-[2025-09-22 09:35:38] 🚀 服务器运行在 http://localhost:3000
-[2025-09-22 09:35:38] 📱 打开浏览器访问上述地址开始使用
-[2025-09-22 09:35:38] 📝 日志文件位置: /Users/bytedance/Desktop/demo/playwright-logs.txt
-[2025-09-22 09:36:55] 清理资源...
+[2025-09-22 11:20:21] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759115994.872134,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047197,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511198%7C1a27596f11c88c4ea8bb826e8ee12d8b90d045ca4858442f8efaad6fae09ae4c",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047197.925325,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375207.029667,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287207,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
+
+[2025-09-22 11:20:22] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759115994.872134,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511198%7C1a27596f11c88c4ea8bb826e8ee12d8b90d045ca4858442f8efaad6fae09ae4c",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047197.925325,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375207.029667,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287207,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
+
+[2025-09-22 11:20:22] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511198%7C1a27596f11c88c4ea8bb826e8ee12d8b90d045ca4858442f8efaad6fae09ae4c",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047197.925325,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375207.029667,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287207,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
+
+[2025-09-22 11:20:22] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759115994.878038,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375207.029667,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287207,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511222%7Ceafafd0a259dbf80d320bbc3996a1faf5a45e9c21dbef293ea78a36115112cbb",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222.427713,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
+
+[2025-09-22 11:20:22] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375207.029667,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287207,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511222%7Ceafafd0a259dbf80d320bbc3996a1faf5a45e9c21dbef293ea78a36115112cbb",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222.427713,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
+
+[2025-09-22 11:20:23] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287207,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511222%7Ceafafd0a259dbf80d320bbc3996a1faf5a45e9c21dbef293ea78a36115112cbb",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222.427713,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "FTfX91Q-G8exc0X_5O631j05_F5nrVj-T7wTtCdGmDvQqz7mQ91nFZnZ7kjjZOs5Qn35MbEkk9UZQ13GwFBW2fZlsjPCAKFDP-VAwL1fSdx4d9X-SV7iqpgELN27yCLXYaH5acMNEA==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375223.323084,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
+
+[2025-09-22 11:20:24] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "unhu-y0Kwi7-D3ELHO0UILN2vZANOaV00IBNUgFop5f-V6H1bksSoaspGgUVdghsLaesc6fnfOK90J2NqPFlBXzjBCDRqBixlecErJTYEru2iYcuCAxfOPT_OJYalZA75E8OH0QzJg==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287207,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "msToken",
+    "value": "FTfX91Q-G8exc0X_5O631j05_F5nrVj-T7wTtCdGmDvQqz7mQ91nFZnZ7kjjZOs5Qn35MbEkk9UZQ13GwFBW2fZlsjPCAKFDP-VAwL1fSdx4d9X-SV7iqpgELN27yCLXYaH5acMNEA==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375223.323084,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511224%7Ce013bb3131add5139cf9bbb8c0932f9db5b400e9f33e10e7064df9e9349ebbd5",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047224.261951,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
+
+[2025-09-22 11:20:24] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511224%7Ce013bb3131add5139cf9bbb8c0932f9db5b400e9f33e10e7064df9e9349ebbd5",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047224.261951,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "0WtIVTX-DOx986fGfn97ElD3Xk67zrTs8zP1G4qRD33zOOFzHrQznfhTsdRVUxpQJ9rXZDDXWAkB4__4uih2Rwr9uIanYuZlQ2bRRgUiWfYrLVEwcmBCFShs6BnRChJB2n837GU-iA==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375224.763181,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "0WtIVTX-DOx986fGfn97ElD3Xk67zrTs8zP1G4qRD33zOOFzHrQznfhTsdRVUxpQJ9rXZDDXWAkB4__4uih2Rwr9uIanYuZlQ2bRRgUiWfYrLVEwcmBCFShs6BnRChJB2n837GU-iA==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287224,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
+
+[2025-09-22 11:20:28] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511224%7Ce013bb3131add5139cf9bbb8c0932f9db5b400e9f33e10e7064df9e9349ebbd5",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047224.261951,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375228.634565,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287228,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
+
+[2025-09-22 11:20:32] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511224%7Ce013bb3131add5139cf9bbb8c0932f9db5b400e9f33e10e7064df9e9349ebbd5",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047224.261951,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287228,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "msToken",
+    "value": "TUMiOBmHJF4JEHXVmUsDThQJcJ1UT2Ai8LnfmFytrOLWCG2XAgypexx86gZ_ngNRHJOd3wb_1coQdylbaiMhQTvDGrCgL6bqIpFlSHJHXasSNbXZH1ra9jJZzhg=",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375232.292497,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
+
+[2025-09-22 11:20:32] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511224%7Ce013bb3131add5139cf9bbb8c0932f9db5b400e9f33e10e7064df9e9349ebbd5",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047224.261951,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375228.634565,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287228,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
+
+[2025-09-22 11:20:32] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511224%7Ce013bb3131add5139cf9bbb8c0932f9db5b400e9f33e10e7064df9e9349ebbd5",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047224.261951,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287228,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "msToken",
+    "value": "TUMiOBmHJF4JEHXVmUsDThQJcJ1UT2Ai8LnfmFytrOLWCG2XAgypexx86gZ_ngNRHJOd3wb_1coQdylbaiMhQTvDGrCgL6bqIpFlSHJHXasSNbXZH1ra9jJZzhg=",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375232.292497,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
+
+[2025-09-22 11:20:32] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511224%7Ce013bb3131add5139cf9bbb8c0932f9db5b400e9f33e10e7064df9e9349ebbd5",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047224.261951,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375228.634565,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287228,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
+
+[2025-09-22 11:20:32] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511224%7Ce013bb3131add5139cf9bbb8c0932f9db5b400e9f33e10e7064df9e9349ebbd5",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047224.261951,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287228,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "msToken",
+    "value": "TUMiOBmHJF4JEHXVmUsDThQJcJ1UT2Ai8LnfmFytrOLWCG2XAgypexx86gZ_ngNRHJOd3wb_1coQdylbaiMhQTvDGrCgL6bqIpFlSHJHXasSNbXZH1ra9jJZzhg=",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375232.292497,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
+
+[2025-09-22 11:20:32] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511224%7Ce013bb3131add5139cf9bbb8c0932f9db5b400e9f33e10e7064df9e9349ebbd5",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047224.261951,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375228.634565,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287228,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
+
+[2025-09-22 11:20:32] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511224%7Ce013bb3131add5139cf9bbb8c0932f9db5b400e9f33e10e7064df9e9349ebbd5",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047224.261951,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287228,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "msToken",
+    "value": "TUMiOBmHJF4JEHXVmUsDThQJcJ1UT2Ai8LnfmFytrOLWCG2XAgypexx86gZ_ngNRHJOd3wb_1coQdylbaiMhQTvDGrCgL6bqIpFlSHJHXasSNbXZH1ra9jJZzhg=",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375232.292497,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
+
+[2025-09-22 11:20:32] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511224%7Ce013bb3131add5139cf9bbb8c0932f9db5b400e9f33e10e7064df9e9349ebbd5",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047224.261951,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375228.634565,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287228,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
+
+[2025-09-22 11:20:32] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511224%7Ce013bb3131add5139cf9bbb8c0932f9db5b400e9f33e10e7064df9e9349ebbd5",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047224.261951,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "-nO8iY98YbPD343mp4V1jqN8zv6BSowWOesRywTk6SFg_zWrWvA1nIe-yofFvngKeqIvEFRZQIcDeWGwkBvZuQlGDZd6ic3KmfcEKl5pwglsBHszSM3ykAOf4QrOc8Z52yBmI8UY8w==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287228,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "msToken",
+    "value": "TUMiOBmHJF4JEHXVmUsDThQJcJ1UT2Ai8LnfmFytrOLWCG2XAgypexx86gZ_ngNRHJOd3wb_1coQdylbaiMhQTvDGrCgL6bqIpFlSHJHXasSNbXZH1ra9jJZzhg=",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375232.292497,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  }
+]
+==================
+
+[2025-09-22 11:20:34] 
+=== Storage Cookie ===
+[
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC4zMzAyNzMwMTEyNzEwNTY4fQ==.L860aW9+BDh1/fgHdBKAARioa2W1pq+Gh/3BUXQluAk=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/main_manifest.json",
+    "expires": 1759116022.292153,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_m4b_theme_",
+    "value": "new",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116021.754486,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "i18next",
+    "value": "en",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047222,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_mfuk5twm_YpJxnhdj_NBw3_4XLq_8tSU_uR1m7UBWYUvO",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "gd_random",
+    "value": "eyJtYXRjaCI6dHJ1ZSwicGVyY2VudCI6MC41MzY3ODQxMDQwODc4NzY5fQ==.iXBk3n8xClhG2w1r6GpM/arnP9kBH5qPiKAjQjERK8M=",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1759116022.445463,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7Cjesz5545XD8KWDhpO3nPxFnFIIKkEOZ0Zl06Iw5lvEY%7C1758511195%7Ce652a06c5512baba8e07faa13d2cf637cd92d0afb838a6e2c30368a749555e1d",
+    "domain": ".byteoversea.com",
+    "path": "/",
+    "expires": 1790047195.489363,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511197%7Cee0e95c1aa284fce4e9b0484d36041aeb023af60c194b732385342627be7a177",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1790047196.980845,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7C5FvM4mR-r5cwN8k1tFxpG7uyBLoJqmpbF9x-zSjjdao%7C1758511224%7Ce013bb3131add5139cf9bbb8c0932f9db5b400e9f33e10e7064df9e9349ebbd5",
+    "domain": ".tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1790047224.261951,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "TpBMhtfSnsE1QuoKksR8UkNRGyrxTkHJx9yUVE5YvIy-294TIjikjDNiIVhqLrLOsO1s9rgd9na35prWkXXTGihMxEz-Ii72OuiI1tn-gatfcN8wjMQVkhdMNZ_Vzi-83RWfioIajQ==",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "expires": 1759375234.861934,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "msToken",
+    "value": "TpBMhtfSnsE1QuoKksR8UkNRGyrxTkHJx9yUVE5YvIy-294TIjikjDNiIVhqLrLOsO1s9rgd9na35prWkXXTGihMxEz-Ii72OuiI1tn-gatfcN8wjMQVkhdMNZ_Vzi-83RWfioIajQ==",
+    "domain": "seller.tiktokshopglobalselling.com",
+    "path": "/",
+    "expires": 1766287234,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
+==================
+

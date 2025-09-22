@@ -11,7 +11,7 @@ from fastapi.responses import FileResponse
 from playwright.async_api import async_playwright, Browser, Page
 import uvicorn
 
-already_storage_state = ""
+cookies_global = ''
 
 class PlaywrightWebProxyServer:
     def __init__(self):
@@ -265,14 +265,15 @@ class PlaywrightWebProxyServer:
                 context = self.page.context
                 storage_state = await context.storage_state()
                 if 'cookies' not in storage_state:
-                    return 
-                cookies = storage_state['cookies']
-                global already_storage_state
-                if cookies == already_storage_state:
                     return
-                log_message += f"\n=== Storage Cookies ===\n{json.dumps(cookies, indent=2, ensure_ascii=False)}\n"
+                cookies = storage_state['cookies']
+                global cookies_global
+                if cookies == cookies_global:
+                    return
+                cookies_global = cookies
+                log_message += f"\n=== Storage Cookie ===\n{json.dumps(cookies, indent=2, ensure_ascii=False)}\n"
             except Exception as e:
-                log_message += f"\n=== Storage Cookies Error ===\n{str(e)}\n"
+                log_message += f"\n=== Storage Cookie Error ===\n{str(e)}\n"
         
         log_message += "==================\n"
         self.write_log(log_message)
@@ -311,7 +312,7 @@ server = PlaywrightWebProxyServer()
 @server.app.on_event("startup")
 async def startup_event():
     await server.init_browser()
-    server.write_log('🚀 服务器运行在 http://localhost:3000')
+    server.write_log('🚀 服务器运行在 http://localhost:9098')
     server.write_log('📱 打开浏览器访问上述地址开始使用')
     server.write_log(f'📝 日志文件位置: {server.log_file}')
 
@@ -320,4 +321,4 @@ async def shutdown_event():
     await server.cleanup()
 
 if __name__ == "__main__":
-    uvicorn.run(server.app, host="0.0.0.0", port=9097)
+    uvicorn.run(server.app, host="0.0.0.0", port=9098)

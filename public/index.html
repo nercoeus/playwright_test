@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自助托管登录</title>
+    <title>自助托管</title>
     <style>
         * {
             margin: 0;
@@ -135,19 +135,19 @@
 </head>
 <body>
     <div class="header">
-        <div class="title">🌐 自助托管登录服务</div>
+        <div class="title">🌐 自助托管登录</div>
         
         <div class="url-bar">
-            <input type="text" id="urlInput" class="url-input" placeholder="输入网址，例如：https://www.baidu.com" value="https://seller.tiktokshopglobalselling.com/account/login?shop_region=JP&redirect_url=https%3A%2F%2Fseller.tiktokshopglobalselling.com%2Fhomepage%3Fshop_region%3DJP">
-            <button id="goBtn" class="btn">开始登录</button>
+            <input type="text" id="urlInput" class="url-input" placeholder="输入网址，例如：https://seller.tiktokshopglobalselling.com/account/login?shop_region=JP&redirect_url=https%3A%2F%2Fseller.tiktokshopglobalselling.com%2Fhomepage%3Fshop_region%3DJP" value="https://seller.tiktokshopglobalselling.com/account/login?shop_region=JP&redirect_url=https%3A%2F%2Fseller.tiktokshopglobalselling.com%2Fhomepage%3Fshop_region%3DJP">
+            <button id="goBtn" class="btn">访问</button>
         </div>
         
-        <!-- <div class="controls">
+        <div class="controls">
             <button id="refreshBtn" class="btn" disabled>刷新</button>
             <button id="backBtn" class="btn" disabled>后退</button>
             <button id="forwardBtn" class="btn" disabled>前进</button>
             <button id="screenshotBtn" class="btn" disabled>截图</button>
-        </div> -->
+        </div>
         
         <div id="status" class="status connecting">正在连接服务器...</div>
     </div>
@@ -203,24 +203,20 @@
 
             bindEvents() {
                 document.getElementById('goBtn').onclick = () => this.navigate();
+                document.getElementById('refreshBtn').onclick = () => this.refresh();
+                document.getElementById('backBtn').onclick = () => this.goBack();
+                document.getElementById('forwardBtn').onclick = () => this.goForward();
+                document.getElementById('screenshotBtn').onclick = () => this.takeScreenshot();
                 
                 document.getElementById('urlInput').onkeypress = (e) => {
                     if (e.key === 'Enter') this.navigate();
                 };
-
-                // The following event listeners for commented-out buttons were causing errors
-                // and have been removed to ensure the screenshot click handler works correctly.
-                // document.getElementById('refreshBtn').onclick = () => this.refresh();
-                // document.getElementById('backBtn').onclick = () => this.goBack();
-                // document.getElementById('forwardBtn').onclick = () => this.goForward();
-                // document.getElementById('screenshotBtn').onclick = () => this.takeScreenshot();
                 
                 document.getElementById('screenshot').onclick = (e) => {
                     if (e.target.src) {
                         const rect = e.target.getBoundingClientRect();
                         const x = (e.clientX - rect.left) * (e.target.naturalWidth / rect.width);
                         const y = (e.clientY - rect.top) * (e.target.naturalHeight / rect.height);
-                        console.log(`Clicking at: ${x}, ${y}`);
                         this.click(x, y);
                     }
                 };
