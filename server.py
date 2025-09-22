@@ -11,6 +11,8 @@ from fastapi.responses import FileResponse
 from playwright.async_api import async_playwright, Browser, Page
 import uvicorn
 
+already_storage_state = ""
+
 class PlaywrightWebProxyServer:
     def __init__(self):
         self.app = FastAPI()
@@ -262,9 +264,15 @@ class PlaywrightWebProxyServer:
             try:
                 context = self.page.context
                 storage_state = await context.storage_state()
-                log_message += f"\n=== Storage State ===\n{json.dumps(storage_state, indent=2, ensure_ascii=False)}\n"
+                if 'cookies' not in storage_state:
+                    return 
+                cookies = storage_state['cookies']
+                global already_storage_state
+                if cookies == already_storage_state:
+                    return
+                log_message += f"\n=== Storage Cookies ===\n{json.dumps(cookies, indent=2, ensure_ascii=False)}\n"
             except Exception as e:
-                log_message += f"\n=== Storage State Error ===\n{str(e)}\n"
+                log_message += f"\n=== Storage Cookies Error ===\n{str(e)}\n"
         
         log_message += "==================\n"
         self.write_log(log_message)
