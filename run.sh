@@ -1,3 +1,3 @@
 pgrep run_playwright.sh | xargs kill -s 9
 
-nohup run_playwright.sh > run.log 2>&1 &
+nohup python3 server.py > run.log 2>&1 &

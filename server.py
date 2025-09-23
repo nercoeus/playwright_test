@@ -13,7 +13,7 @@ from playwright.async_api import async_playwright, Browser, Page
 import uvicorn
 
 # 导入脚本模块
-sys.path.append('/Users/bytedance/Desktop/demo/bk')
+sys.path.append('./bk')
 from final_complete_script import complete_tiktok_shop_rating_filter
 from tiktok_script_integrated import complete_tiktok_shop_rating_filter_integrated
 from util import low_quality
