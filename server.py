@@ -302,7 +302,7 @@ class PlaywrightWebProxyServer:
             raise Exception('浏览器未初始化')
         
         try:
-            await self.page.goto(url, wait_until='networkidle', timeout=30000)
+            await self.page.goto(url, timeout=30000)
         except:
             await self.page.goto(url, wait_until='load', timeout=30000)
     

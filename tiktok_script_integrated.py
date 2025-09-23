@@ -5,6 +5,7 @@ TikTok Shop 商品评分筛选完整流程 - 适配版本
 """
 import asyncio
 import json
+import time
 from datetime import datetime, timedelta
 from playwright.async_api import Page
 from util import low_quality
@@ -139,7 +140,7 @@ async def complete_tiktok_shop_rating_filter_integrated(page: Page, websocket_ca
                 # 多层级等待策略
                 try:
                     # 第一级：网络空闲等待 (最理想)
-                    await page.wait_for_load_state('networkidle', timeout=60000)  # 增加到60秒
+                    # await page.wait_for_load_state('networkidle', timeout=60000)  # 增加到60秒
                     await page.wait_for_timeout(3000)
                     await send_status('success', '✓ 页面网络空闲，加载完成')
                     page_loaded = True
@@ -244,10 +245,9 @@ async def complete_tiktok_shop_rating_filter_integrated(page: Page, websocket_ca
             if not product_clicked:
                 await send_status('running', '尝试通过悬停展开商品菜单')
                 await page.hover('text=商品', timeout=5000)
-                await page.wait_for_timeout(1000)
 
             # 等待商品子菜单展开
-            await page.wait_for_timeout(2000)
+            await page.wait_for_timeout(1000)
 
             # 点击商品评分
             rating_selectors = [
