@@ -339,13 +339,6 @@ class PlaywrightWebProxyServer:
     
     async def clear_cookies(self, websocket: WebSocket):
         """清空浏览器cookies"""
-        if not self.page:
-            await self.safe_send_message(websocket, {
-                'type': 'cookie-clear-result',
-                'data': {'success': False, 'message': '浏览器未初始化'}
-            })
-            return
-        
         try:
             # 清空当前页面的所有cookies
             context = self.page.context
