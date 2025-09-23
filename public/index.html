@@ -39,7 +39,7 @@
         }
 
         .url-input {
-            width: 19%;
+            flex: 1;
             padding: 12px;
             border: 2px solid #e5e7eb;
             border-radius: 8px;
@@ -62,6 +62,8 @@
             font-size: 14px;
             font-weight: 500;
             transition: background-color 0.2s;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .btn:hover {
@@ -75,7 +77,10 @@
 
         .controls {
             display: flex;
-            gap: 10px;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .status {
@@ -141,16 +146,9 @@
 
         <div class="url-bar">
             <input type="text" id="urlInput" class="url-input"
-                placeholder="输入网址，例如：https://seller.tiktokshopglobalselling.com/account/login?shop_region=JP&redirect_url=https%3A%2F%2Fseller.tiktokshopglobalselling.com%2Fhomepage%3Fshop_region%3DJP"
-                value="https://seller.tiktokshopglobalselling.com/account/login?shop_region=JP&redirect_url=https%3A%2F%2Fseller.tiktokshopglobalselling.com%2Fhomepage%3Fshop_region%3DJP">
-            <button id="goBtn" class="btn">访问</button>
-        </div>
-
-        <div class="controls">
-            <button id="refreshBtn" class="btn" disabled>刷新</button>
-            <button id="backBtn" class="btn" disabled>后退</button>
-            <button id="forwardBtn" class="btn" disabled>前进</button>
-            <button id="screenshotBtn" class="btn" disabled>截图</button>
+                placeholder="输入网址，例如：https://seller.tiktokshopglobalselling.com/account/login"
+                value="https://seller.tiktokshopglobalselling.com/account/login">
+            <button id="goBtn" class="btn">托管登录</button>
             <button id="startScriptBtn" class="btn" disabled>启动TikTok脚本</button>
             <button id="autoRefreshToggle" class="btn" disabled>🔄 自动刷新: 开启</button>
         </div>
@@ -216,23 +214,7 @@
             bindEvents() {
                 document.getElementById('goBtn').onclick = () => {
                     this.updateUserActivity();
-                    this.navigate();
-                };
-                document.getElementById('refreshBtn').onclick = () => {
-                    this.updateUserActivity();
-                    this.refresh();
-                };
-                document.getElementById('backBtn').onclick = () => {
-                    this.updateUserActivity();
-                    this.goBack();
-                };
-                document.getElementById('forwardBtn').onclick = () => {
-                    this.updateUserActivity();
-                    this.goForward();
-                };
-                document.getElementById('screenshotBtn').onclick = () => {
-                    this.updateUserActivity();
-                    this.takeScreenshot();
+                    this.clearCookiesAndNavigate();
                 };
                 document.getElementById('startScriptBtn').onclick = () => {
                     this.updateUserActivity();
@@ -245,7 +227,7 @@
 
                 document.getElementById('urlInput').onkeypress = (e) => {
                     this.updateUserActivity();
-                    if (e.key === 'Enter') this.navigate();
+                    if (e.key === 'Enter') this.clearCookiesAndNavigate();
                 };
 
                 document.getElementById('screenshot').onclick = (e) => {
@@ -305,10 +287,39 @@
                     case 'script-status':
                         this.updateScriptStatus(message.data.status, message.data.message);
                         break;
+                    case 'cookie-clear-result':
+                        this.handleCookieClearResult(message.data);
+                        break;
                     case 'error':
                         this.updateStatus('error', `错误: ${message.data.message}`);
                         this.hideLoading();
                         break;
+                }
+            }
+
+            clearCookiesAndNavigate() {
+                const url = document.getElementById('urlInput').value.trim();
+                if (!url) return;
+
+                // 先清空cookies，然后导航
+                this.updateStatus('connecting', '正在清空cookies...');
+                this.sendMessage('clear-cookies');
+
+                // 保存URL以便在清空cookies后导航
+                this.pendingNavigationUrl = url;
+            }
+
+            handleCookieClearResult(data) {
+                if (data.success) {
+                    this.updateStatus('connecting', '已清空cookies，正在导航...');
+                    // 清空cookies成功后，执行导航
+                    if (this.pendingNavigationUrl) {
+                        this.showLoading();
+                        this.sendMessage('navigate', { url: this.pendingNavigationUrl });
+                        this.pendingNavigationUrl = null;
+                    }
+                } else {
+                    this.updateStatus('error', `清空cookies失败: ${data.message}`);
                 }
             }
 
@@ -318,23 +329,6 @@
 
                 this.showLoading();
                 this.sendMessage('navigate', { url });
-            }
-
-            refresh() {
-                this.showLoading();
-                this.sendMessage('refresh');
-            }
-
-            goBack() {
-                this.sendMessage('go-back');
-            }
-
-            goForward() {
-                this.sendMessage('go-forward');
-            }
-
-            takeScreenshot() {
-                this.sendMessage('screenshot');
             }
 
             startScript() {
@@ -401,7 +395,9 @@
             }
 
             enableControls() {
-                document.querySelectorAll('.btn').forEach(btn => btn.disabled = false);
+                document.getElementById('goBtn').disabled = !this.isConnected;
+                document.getElementById('startScriptBtn').disabled = !this.isConnected;
+                document.getElementById('autoRefreshToggle').disabled = !this.isConnected;
             }
 
             disableControls() {
@@ -461,7 +457,7 @@
                         const screenshot = document.getElementById('screenshot');
                         // 只有当页面已经加载了截图时才自动刷新
                         if (screenshot.style.display !== 'none' && screenshot.src) {
-                            this.takeScreenshot();
+                            this.sendMessage('screenshot');
                         }
                     }
                 }, 1000); // 每秒检查一次

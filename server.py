@@ -150,6 +150,9 @@ class PlaywrightWebProxyServer:
                     'data': {'screenshot': screenshot}
                 })
             
+            elif msg_type == 'clear-cookies':
+                await self.clear_cookies(websocket)
+            
             elif msg_type == 'screenshot':
                 screenshot = await self.take_screenshot()
                 await self.safe_send_message(websocket, {
@@ -334,6 +337,65 @@ class PlaywrightWebProxyServer:
         import base64
         return base64.b64encode(screenshot).decode('utf-8')
     
+    async def clear_cookies(self, websocket: WebSocket):
+        """清空浏览器cookies"""
+        if not self.page:
+            await self.safe_send_message(websocket, {
+                'type': 'cookie-clear-result',
+                'data': {'success': False, 'message': '浏览器未初始化'}
+            })
+            return
+        
+        try:
+            # 清空当前页面的所有cookies
+            context = self.page.context
+            await context.clear_cookies()
+            
+            self.write_log('已清空浏览器cookies')
+            await self.safe_send_message(websocket, {
+                'type': 'cookie-clear-result',
+                'data': {'success': True, 'message': '已清空cookies'}
+            })
+            
+        except Exception as e:
+            error_msg = f'清空cookies失败: {str(e)}'
+            self.write_log(error_msg)
+            await self.safe_send_message(websocket, {
+                'type': 'cookie-clear-result',
+                'data': {'success': False, 'message': error_msg}
+            })
+    
+    async def load_cookies_for_script(self, websocket: WebSocket):
+        """为脚本加载cookies"""
+        try:
+            cookies_file = './bk/cookies.json'
+            if os.path.exists(cookies_file):
+                with open(cookies_file, 'r') as f:
+                    cookies = json.load(f)
+                
+                # 添加cookies到浏览器上下文
+                await self.page.context.add_cookies(cookies)
+                
+                await self.safe_send_message(websocket, {
+                    'type': 'script-status',
+                    'data': {'status': 'running', 'message': '已加载 cookies'}
+                })
+                self.write_log('脚本启动时已加载 cookies')
+            else:
+                await self.safe_send_message(websocket, {
+                    'type': 'script-status',
+                    'data': {'status': 'running', 'message': 'cookies文件不存在，继续执行...'}
+                })
+                self.write_log('cookies文件不存在，脚本将在无cookies状态下执行')
+                
+        except Exception as e:
+            error_msg = f'加载 cookies 失败: {str(e)}，继续执行...'
+            await self.safe_send_message(websocket, {
+                'type': 'script-status',
+                'data': {'status': 'running', 'message': error_msg}
+            })
+            self.write_log(error_msg)
+    
     async def cleanup(self):
         """清理资源"""
         self.write_log('清理资源...')
@@ -379,6 +441,9 @@ class PlaywrightWebProxyServer:
             # 使用现有的页面实例执行脚本
             if not self.page:
                 raise Exception('浏览器页面未初始化')
+            
+            # 在启动脚本前先加载cookies
+            await self.load_cookies_for_script(websocket)
             
             # 创建回调函数来发送状态更新
             async def status_callback(message):
