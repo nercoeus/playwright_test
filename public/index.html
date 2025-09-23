@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,7 @@
         .header {
             background: white;
             padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
 
@@ -109,14 +110,14 @@
             background: white;
             border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
         .screenshot {
             max-width: 100%;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             cursor: crosshair;
         }
 
@@ -133,23 +134,27 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header">
         <div class="title">🌐 自助托管登录</div>
-        
+
         <div class="url-bar">
-            <input type="text" id="urlInput" class="url-input" placeholder="输入网址，例如：https://seller.tiktokshopglobalselling.com/account/login?shop_region=JP&redirect_url=https%3A%2F%2Fseller.tiktokshopglobalselling.com%2Fhomepage%3Fshop_region%3DJP" value="https://seller.tiktokshopglobalselling.com/account/login?shop_region=JP&redirect_url=https%3A%2F%2Fseller.tiktokshopglobalselling.com%2Fhomepage%3Fshop_region%3DJP">
+            <input type="text" id="urlInput" class="url-input"
+                placeholder="输入网址，例如：https://seller.tiktokshopglobalselling.com/account/login?shop_region=JP&redirect_url=https%3A%2F%2Fseller.tiktokshopglobalselling.com%2Fhomepage%3Fshop_region%3DJP"
+                value="https://seller.tiktokshopglobalselling.com/account/login?shop_region=JP&redirect_url=https%3A%2F%2Fseller.tiktokshopglobalselling.com%2Fhomepage%3Fshop_region%3DJP">
             <button id="goBtn" class="btn">访问</button>
         </div>
-        
+
         <div class="controls">
             <button id="refreshBtn" class="btn" disabled>刷新</button>
             <button id="backBtn" class="btn" disabled>后退</button>
             <button id="forwardBtn" class="btn" disabled>前进</button>
             <button id="screenshotBtn" class="btn" disabled>截图</button>
             <button id="startScriptBtn" class="btn" disabled>启动TikTok脚本</button>
+            <button id="autoRefreshToggle" class="btn" disabled>🔄 自动刷新: 开启</button>
         </div>
-        
+
         <div id="status" class="status connecting">正在连接服务器...</div>
         <div id="scriptStatus" class="status" style="display: none;">脚本状态：待启动</div>
     </div>
@@ -157,7 +162,7 @@
     <div class="main">
         <div class="screenshot-container">
             <div id="loading" class="loading" style="display: none;">正在加载页面...</div>
-            <div id="placeholder" class="placeholder">在上方输入网址开始浏览</div>
+            <div id="placeholder" class="placeholder">浏览区域</div>
             <img id="screenshot" class="screenshot" style="display: none;">
         </div>
     </div>
@@ -167,55 +172,84 @@
             constructor() {
                 this.ws = null;
                 this.isConnected = false;
+                this.lastUserActivity = Date.now();
+                this.autoRefreshInterval = null;
+                this.autoRefreshEnabled = true; // 默认开启自动刷新
                 this.init();
             }
 
             init() {
                 this.connectWebSocket();
                 this.bindEvents();
+                this.startAutoRefresh();
             }
 
             connectWebSocket() {
                 const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
                 const wsUrl = `${protocol}//${window.location.host}/ws`;
-                
+
                 this.ws = new WebSocket(wsUrl);
-                
+
                 this.ws.onopen = () => {
                     this.isConnected = true;
                     this.updateStatus('connected', '已连接到服务器');
                     this.enableControls();
                 };
-                
+
                 this.ws.onmessage = (event) => {
                     const message = JSON.parse(event.data);
                     this.handleMessage(message);
                 };
-                
+
                 this.ws.onclose = () => {
                     this.isConnected = false;
                     this.updateStatus('error', '连接已断开');
                     this.disableControls();
+                    this.stopAutoRefresh(); // 连接断开时停止自动刷新
                 };
-                
+
                 this.ws.onerror = () => {
                     this.updateStatus('error', '连接错误');
                 };
             }
 
             bindEvents() {
-                document.getElementById('goBtn').onclick = () => this.navigate();
-                document.getElementById('refreshBtn').onclick = () => this.refresh();
-                document.getElementById('backBtn').onclick = () => this.goBack();
-                document.getElementById('forwardBtn').onclick = () => this.goForward();
-                document.getElementById('screenshotBtn').onclick = () => this.takeScreenshot();
-                document.getElementById('startScriptBtn').onclick = () => this.startScript();
-                
+                document.getElementById('goBtn').onclick = () => {
+                    this.updateUserActivity();
+                    this.navigate();
+                };
+                document.getElementById('refreshBtn').onclick = () => {
+                    this.updateUserActivity();
+                    this.refresh();
+                };
+                document.getElementById('backBtn').onclick = () => {
+                    this.updateUserActivity();
+                    this.goBack();
+                };
+                document.getElementById('forwardBtn').onclick = () => {
+                    this.updateUserActivity();
+                    this.goForward();
+                };
+                document.getElementById('screenshotBtn').onclick = () => {
+                    this.updateUserActivity();
+                    this.takeScreenshot();
+                };
+                document.getElementById('startScriptBtn').onclick = () => {
+                    this.updateUserActivity();
+                    this.startScript();
+                };
+
+                document.getElementById('autoRefreshToggle').onclick = () => {
+                    this.toggleAutoRefresh();
+                };
+
                 document.getElementById('urlInput').onkeypress = (e) => {
+                    this.updateUserActivity();
                     if (e.key === 'Enter') this.navigate();
                 };
-                
+
                 document.getElementById('screenshot').onclick = (e) => {
+                    this.updateUserActivity();
                     if (e.target.src) {
                         const rect = e.target.getBoundingClientRect();
                         const x = (e.clientX - rect.left) * (e.target.naturalWidth / rect.width);
@@ -223,22 +257,34 @@
                         this.click(x, y);
                     }
                 };
-                
+
                 // 全局键盘事件监听
                 document.addEventListener('keydown', (e) => {
+                    this.updateUserActivity();
                     // 只有当焦点不在URL输入框时才处理键盘事件
                     if (document.activeElement !== document.getElementById('urlInput')) {
                         e.preventDefault();
                         this.handleKeydown(e);
                     }
                 });
-                
+
                 // 滚动事件监听
                 document.getElementById('screenshot').addEventListener('wheel', (e) => {
+                    this.updateUserActivity();
                     e.preventDefault();
                     const currentScrollY = window.scrollY || 0;
                     const newScrollY = currentScrollY + e.deltaY;
                     this.scroll(0, newScrollY);
+                });
+
+                // 鼠标移动事件监听
+                document.addEventListener('mousemove', () => {
+                    this.updateUserActivity();
+                });
+
+                // 鼠标点击事件监听
+                document.addEventListener('click', () => {
+                    this.updateUserActivity();
                 });
             }
 
@@ -269,7 +315,7 @@
             navigate() {
                 const url = document.getElementById('urlInput').value.trim();
                 if (!url) return;
-                
+
                 this.showLoading();
                 this.sendMessage('navigate', { url });
             }
@@ -299,7 +345,7 @@
             click(x, y) {
                 this.sendMessage('click', { x, y });
             }
-            
+
             handleKeydown(e) {
                 const keyData = {
                     key: e.key,
@@ -310,7 +356,7 @@
                 };
                 this.sendMessage('keydown', keyData);
             }
-            
+
             scroll(x, y) {
                 this.sendMessage('scroll', { x, y });
             }
@@ -319,22 +365,22 @@
                 const img = document.getElementById('screenshot');
                 const placeholder = document.getElementById('placeholder');
                 const loading = document.getElementById('loading');
-                
+
                 // 优化：使用JPEG格式而不是PNG，减少数据传输
                 img.src = `data:image/jpeg;base64,${base64Data}`;
-                
+
                 // 添加图片加载优化
-                img.onload = function() {
+                img.onload = function () {
                     // 图片加载完成后的优化处理
                     this.style.imageRendering = 'auto'; // 使用浏览器优化的渲染
                 };
-                
+
                 // 设置图片样式优化
                 img.style.display = 'block';
                 img.style.maxWidth = '100%';
                 img.style.height = 'auto';
                 img.style.objectFit = 'contain'; // 保持比例，优化显示
-                
+
                 placeholder.style.display = 'none';
                 loading.style.display = 'none';
             }
@@ -362,10 +408,24 @@
                 document.querySelectorAll('.btn').forEach(btn => btn.disabled = true);
             }
 
+            // 切换自动刷新状态
+            toggleAutoRefresh() {
+                this.autoRefreshEnabled = !this.autoRefreshEnabled;
+                const toggleBtn = document.getElementById('autoRefreshToggle');
+
+                if (this.autoRefreshEnabled) {
+                    toggleBtn.textContent = '🔄 自动刷新: 开启';
+                    this.startAutoRefresh();
+                } else {
+                    toggleBtn.textContent = '🔄 自动刷新: 关闭';
+                    this.stopAutoRefresh();
+                }
+            }
+
             updateScriptStatus(status, message) {
                 const scriptStatus = document.getElementById('scriptStatus');
                 scriptStatus.style.display = 'block';
-                
+
                 // 根据状态设置不同的样式
                 scriptStatus.className = 'status';
                 if (status === 'starting' || status === 'running') {
@@ -375,12 +435,43 @@
                 } else if (status === 'error') {
                     scriptStatus.className += ' error';
                 }
-                
+
                 scriptStatus.textContent = `脚本状态：${message}`;
-                
+
                 // 如果脚本完成或出错，重新启用按钮
                 if (status === 'completed' || status === 'error') {
                     document.getElementById('startScriptBtn').disabled = false;
+                }
+            }
+
+            // 更新用户活动时间
+            updateUserActivity() {
+                this.lastUserActivity = Date.now();
+            }
+
+            // 启动自动刷新机制
+            startAutoRefresh() {
+                // 每秒检查一次用户活动状态
+                this.autoRefreshInterval = setInterval(() => {
+                    const now = Date.now();
+                    const timeSinceLastActivity = now - this.lastUserActivity;
+
+                    // 如果用户1秒内没有操作，且页面已加载，则自动刷新
+                    if (timeSinceLastActivity >= 1000 && this.isConnected) {
+                        const screenshot = document.getElementById('screenshot');
+                        // 只有当页面已经加载了截图时才自动刷新
+                        if (screenshot.style.display !== 'none' && screenshot.src) {
+                            this.takeScreenshot();
+                        }
+                    }
+                }, 1000); // 每秒检查一次
+            }
+
+            // 停止自动刷新
+            stopAutoRefresh() {
+                if (this.autoRefreshInterval) {
+                    clearInterval(this.autoRefreshInterval);
+                    this.autoRefreshInterval = null;
                 }
             }
         }
@@ -389,4 +480,5 @@
         new WebProxyClient();
     </script>
 </body>
+
 </html>
