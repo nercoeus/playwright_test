@@ -1,6 +1,7 @@
 import asyncio
 import json
 import os
+import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, Set
@@ -11,6 +12,12 @@ from fastapi.responses import FileResponse
 from playwright.async_api import async_playwright, Browser, Page
 import uvicorn
 
+# 导入脚本模块
+sys.path.append('/Users/bytedance/Desktop/demo/bk')
+from final_complete_script import complete_tiktok_shop_rating_filter
+from tiktok_script_integrated import complete_tiktok_shop_rating_filter_integrated
+from util import low_quality
+
 cookies_global = ''
 
 class PlaywrightWebProxyServer:
@@ -20,6 +27,8 @@ class PlaywrightWebProxyServer:
         self.page: Page = None
         self.clients: Dict[str, WebSocket] = {}
         self.log_file = Path(__file__).parent / "playwright-logs.txt"
+        self.script_running = False
+        self.script_task = None
         
         self.init_log_file()
         self.setup_routes()
@@ -99,7 +108,10 @@ class PlaywrightWebProxyServer:
         data = message.get('data', {})
         
         try:
-            if msg_type == 'navigate':
+            if msg_type == 'start-script':
+                await self.start_tiktok_script(websocket)
+            
+            elif msg_type == 'navigate':
                 url = data.get('url')
                 self.write_log(f"导航到: {url}")
                 await self.navigate_to_url(url)
@@ -219,12 +231,14 @@ class PlaywrightWebProxyServer:
         
         self.playwright = await async_playwright().start()
         self.browser = await self.playwright.chromium.launch(
-            headless=True,
+            headless=True,  # 改回无头模式，在托管界面中显示
             args=[
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
                 '--disable-dev-shm-usage',
-                '--disable-gpu'
+                '--disable-gpu',
+                '--disable-web-security',
+                '--disable-features=VizDisplayCompositor'
             ]
         )
         
@@ -289,11 +303,34 @@ class PlaywrightWebProxyServer:
             await self.page.goto(url, wait_until='load', timeout=30000)
     
     async def take_screenshot(self) -> str:
-        """截图"""
+        """截图（智能完整截图版本）"""
         if not self.page:
             raise Exception('浏览器未初始化')
         
-        screenshot = await self.page.screenshot(type='png', full_page=True)
+        try:
+            # 获取页面实际尺寸
+            viewport_size = await self.page.evaluate("""() => {
+                return {
+                    width: Math.max(document.documentElement.scrollWidth, window.innerWidth),
+                    height: Math.max(document.documentElement.scrollHeight, window.innerHeight)
+                };
+            }""")
+            
+            # 如果页面内容超出视窗，使用完整页面截图
+            current_viewport = await self.page.evaluate("() => ({width: window.innerWidth, height: window.innerHeight})")
+            
+            if (viewport_size['width'] > current_viewport['width'] or 
+                viewport_size['height'] > current_viewport['height']):
+                # 页面有滚动内容，使用完整页面截图
+                screenshot = await self.page.screenshot(type='png', full_page=False)
+            else:
+                # 页面内容在视窗内，使用视窗截图
+                screenshot = await self.page.screenshot(type='png', full_page=False)
+                
+        except Exception as e:
+            # 备用方案：使用完整页面截图
+            screenshot = await self.page.screenshot(type='png', full_page=False)
+        screenshot = low_quality(screenshot)
         import base64
         return base64.b64encode(screenshot).decode('utf-8')
     
@@ -305,6 +342,64 @@ class PlaywrightWebProxyServer:
         if hasattr(self, 'playwright'):
             await self.playwright.stop()
         self.write_log('服务器已关闭')
+
+    async def start_tiktok_script(self, websocket: WebSocket):
+        """启动TikTok脚本"""
+        if self.script_running:
+            await self.safe_send_message(websocket, {
+                'type': 'script-status',
+                'data': {'status': 'error', 'message': '脚本已在运行中'}
+            })
+            return
+        
+        self.script_running = True
+        await self.safe_send_message(websocket, {
+            'type': 'script-status',
+            'data': {'status': 'starting', 'message': '正在启动TikTok脚本...'}
+        })
+        
+        try:
+            # 在后台运行脚本
+            self.script_task = asyncio.create_task(self.run_tiktok_script_with_updates(websocket))
+        except Exception as e:
+            self.script_running = False
+            await self.safe_send_message(websocket, {
+                'type': 'script-status',
+                'data': {'status': 'error', 'message': f'启动脚本失败: {str(e)}'}
+            })
+    
+    async def run_tiktok_script_with_updates(self, websocket: WebSocket):
+        """运行TikTok脚本并发送状态更新"""
+        try:
+            await self.safe_send_message(websocket, {
+                'type': 'script-status',
+                'data': {'status': 'running', 'message': '脚本正在执行中...'}
+            })
+            
+            # 使用现有的页面实例执行脚本
+            if not self.page:
+                raise Exception('浏览器页面未初始化')
+            
+            # 创建回调函数来发送状态更新
+            async def status_callback(message):
+                await self.safe_send_message(websocket, message)
+            
+            # 执行适配版本的脚本
+            await complete_tiktok_shop_rating_filter_integrated(self.page, status_callback)
+            
+            await self.safe_send_message(websocket, {
+                'type': 'script-status',
+                'data': {'status': 'completed', 'message': '脚本执行完成'}
+            })
+            
+        except Exception as e:
+            await self.safe_send_message(websocket, {
+                'type': 'script-status',
+                'data': {'status': 'error', 'message': f'脚本执行失败: {str(e)}'}
+            })
+        finally:
+            self.script_running = False
+            self.script_task = None
 
 # 创建服务器实例
 server = PlaywrightWebProxyServer()

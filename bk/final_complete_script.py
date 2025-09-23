@@ -21,7 +21,7 @@ async def complete_tiktok_shop_rating_filter():
         context = await browser.new_context()
 
         # 读取cookies文件
-        with open('/Users/lynch/PycharmProjects/HaluoX/browserbase/925/cookies.json', 'r') as f:
+        with open('./bk/cookies.json', 'r') as f:
             cookies = json.load(f)
 
         # 添加cookies到浏览器上下文

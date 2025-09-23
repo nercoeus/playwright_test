@@ -147,9 +147,11 @@
             <button id="backBtn" class="btn" disabled>后退</button>
             <button id="forwardBtn" class="btn" disabled>前进</button>
             <button id="screenshotBtn" class="btn" disabled>截图</button>
+            <button id="startScriptBtn" class="btn" disabled>启动TikTok脚本</button>
         </div>
         
         <div id="status" class="status connecting">正在连接服务器...</div>
+        <div id="scriptStatus" class="status" style="display: none;">脚本状态：待启动</div>
     </div>
 
     <div class="main">
@@ -207,6 +209,7 @@
                 document.getElementById('backBtn').onclick = () => this.goBack();
                 document.getElementById('forwardBtn').onclick = () => this.goForward();
                 document.getElementById('screenshotBtn').onclick = () => this.takeScreenshot();
+                document.getElementById('startScriptBtn').onclick = () => this.startScript();
                 
                 document.getElementById('urlInput').onkeypress = (e) => {
                     if (e.key === 'Enter') this.navigate();
@@ -253,6 +256,9 @@
                     case 'navigation-complete':
                         this.hideLoading();
                         break;
+                    case 'script-status':
+                        this.updateScriptStatus(message.data.status, message.data.message);
+                        break;
                     case 'error':
                         this.updateStatus('error', `错误: ${message.data.message}`);
                         this.hideLoading();
@@ -285,6 +291,11 @@
                 this.sendMessage('screenshot');
             }
 
+            startScript() {
+                this.sendMessage('start-script');
+                document.getElementById('startScriptBtn').disabled = true;
+            }
+
             click(x, y) {
                 this.sendMessage('click', { x, y });
             }
@@ -309,8 +320,21 @@
                 const placeholder = document.getElementById('placeholder');
                 const loading = document.getElementById('loading');
                 
-                img.src = `data:image/png;base64,${base64Data}`;
+                // 优化：使用JPEG格式而不是PNG，减少数据传输
+                img.src = `data:image/jpeg;base64,${base64Data}`;
+                
+                // 添加图片加载优化
+                img.onload = function() {
+                    // 图片加载完成后的优化处理
+                    this.style.imageRendering = 'auto'; // 使用浏览器优化的渲染
+                };
+                
+                // 设置图片样式优化
                 img.style.display = 'block';
+                img.style.maxWidth = '100%';
+                img.style.height = 'auto';
+                img.style.objectFit = 'contain'; // 保持比例，优化显示
+                
                 placeholder.style.display = 'none';
                 loading.style.display = 'none';
             }
@@ -336,6 +360,28 @@
 
             disableControls() {
                 document.querySelectorAll('.btn').forEach(btn => btn.disabled = true);
+            }
+
+            updateScriptStatus(status, message) {
+                const scriptStatus = document.getElementById('scriptStatus');
+                scriptStatus.style.display = 'block';
+                
+                // 根据状态设置不同的样式
+                scriptStatus.className = 'status';
+                if (status === 'starting' || status === 'running') {
+                    scriptStatus.className += ' connecting';
+                } else if (status === 'completed') {
+                    scriptStatus.className += ' connected';
+                } else if (status === 'error') {
+                    scriptStatus.className += ' error';
+                }
+                
+                scriptStatus.textContent = `脚本状态：${message}`;
+                
+                // 如果脚本完成或出错，重新启用按钮
+                if (status === 'completed' || status === 'error') {
+                    document.getElementById('startScriptBtn').disabled = false;
+                }
             }
         }
 
