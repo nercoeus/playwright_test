@@ -109,11 +109,15 @@ class PlaywrightWebProxyServer:
         
         try:
             if msg_type == 'start-script':
+                # 为脚本创建新页面
+                await self.create_new_page()
                 await self.start_tiktok_script(websocket)
             
             elif msg_type == 'navigate':
                 url = data.get('url')
                 self.write_log(f"导航到: {url}")
+                # 创建新页面进行导航
+                await self.create_new_page()
                 await self.navigate_to_url(url)
                 screenshot = await self.take_screenshot()
                 await self.safe_send_message(websocket, {
@@ -242,9 +246,20 @@ class PlaywrightWebProxyServer:
             # 设置视口大小
             await self.page.set_viewport_size({"width": 1280, "height": 720})
             
-            # 设置用户代理
+            # 设置完整的请求头，模拟真实浏览器
             await self.page.set_extra_http_headers({
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'DNT': '1',
+                'Connection': 'keep-alive',
+                'Upgrade-Insecure-Requests': '1',
+                'Sec-Fetch-Dest': 'document',
+                'Sec-Fetch-Mode': 'navigate',
+                'Sec-Fetch-Site': 'none',
+                'Sec-Fetch-User': '?1',
+                'Cache-Control': 'max-age=0'
             })
             
             # 监听请求和响应
@@ -270,7 +285,17 @@ class PlaywrightWebProxyServer:
                 '--disable-dev-shm-usage',
                 '--disable-gpu',
                 '--disable-web-security',
-                '--disable-features=VizDisplayCompositor'
+                '--disable-features=VizDisplayCompositor',
+                # 性能优化参数
+                '--disable-background-timer-throttling',
+                '--disable-backgrounding-occluded-windows',
+                '--disable-renderer-backgrounding',
+                '--disable-features=TranslateUI',
+                '--disable-ipc-flooding-protection',
+                '--enable-features=NetworkService,NetworkServiceInProcess',
+                '--aggressive-cache-discard',
+                '--memory-pressure-off',
+                '--max_old_space_size=4096'
             ]
         )
         
@@ -279,9 +304,20 @@ class PlaywrightWebProxyServer:
         # 设置视口大小
         await self.page.set_viewport_size({"width": 1280, "height": 720})
         
-        # 设置用户代理
+        # 设置完整的请求头，模拟真实浏览器
         await self.page.set_extra_http_headers({
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+            'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'DNT': '1',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'none',
+            'Sec-Fetch-User': '?1',
+            'Cache-Control': 'max-age=0'
         })
         
         # 监听请求和响应
@@ -331,7 +367,10 @@ class PlaywrightWebProxyServer:
             raise Exception('浏览器未初始化')
         
         try:
-            await self.page.goto(url, timeout=30000)
+            # 使用更优化的导航选项
+            await self.page.goto(url, 
+                                timeout=15000,  # 减少超时时间
+                                wait_until='domcontentloaded')  # 只等待DOM加载完成，不等待所有资源
         except:
             await self.page.goto(url, wait_until='load', timeout=30000)
     
