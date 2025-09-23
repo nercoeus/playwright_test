@@ -275,6 +275,7 @@ class PlaywrightWebProxyServer:
         # log_message = f"\n=== 响应信息 ===\nURL: {response.url}\n状态码: {response.status}\n状态文本: {response.status_text}\n响应头:\n"
         # for key, value in response.headers.items():
         #     log_message += f"  {key}: {value}\n"
+        return
         log_message = f""
         # 打印浏览器上下文的storage_state
         if self.browser and hasattr(self, 'page') and self.page:
