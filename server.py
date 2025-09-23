@@ -228,6 +228,35 @@ class PlaywrightWebProxyServer:
                 'data': {'message': str(e)}
             }))
     
+    async def create_new_page(self):
+        """创建新的页面"""
+        try:
+            # 如果已有页面，先关闭它
+            if self.page:
+                await self.page.close()
+                self.write_log('已关闭旧页面')
+            
+            # 创建新页面
+            self.page = await self.browser.new_page()
+            
+            # 设置视口大小
+            await self.page.set_viewport_size({"width": 1280, "height": 720})
+            
+            # 设置用户代理
+            await self.page.set_extra_http_headers({
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            })
+            
+            # 监听请求和响应
+            self.page.on('request', self.log_request)
+            self.page.on('response', self.log_response)
+            
+            self.write_log('已创建新页面')
+            
+        except Exception as e:
+            self.write_log(f'创建新页面失败: {str(e)}')
+            raise e
+
     async def init_browser(self):
         """初始化浏览器"""
         self.write_log('初始化 Playwright 浏览器...')
