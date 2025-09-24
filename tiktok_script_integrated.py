@@ -108,7 +108,7 @@ async def complete_tiktok_shop_rating_filter_integrated(page: Page, websocket_ca
         await send_status('warning', f'加载 cookies 失败: {str(e)}，继续执行...')
 
     # 设置shop_region参数
-    shop_region = 'PH'
+    shop_region = 'TH'
 
     try:
         await send_status('running', '第一步：进入TikTok Shop页面')
