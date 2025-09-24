@@ -232,13 +232,73 @@ class PlaywrightWebProxyServer:
                 'data': {'message': str(e)}
             }))
     
+    async def check_browser_health(self):
+        """检查浏览器健康状态"""
+        try:
+            if not self.browser or not self.browser.is_connected():
+                return False
+            if not self.page or self.page.is_closed():
+                return False
+            return True
+        except Exception:
+            return False
+    
+    async def ensure_browser_ready(self):
+        """确保浏览器处于可用状态，如果不可用则重新初始化"""
+        try:
+            if not await self.check_browser_health():
+                self.write_log('检测到浏览器不可用，正在重新初始化...')
+                await self.reinit_browser()
+                return True
+            return True
+        except Exception as e:
+            self.write_log(f'浏览器健康检查失败: {str(e)}')
+            return False
+    
+    async def reinit_browser(self):
+        """重新初始化浏览器"""
+        try:
+            # 清理旧的浏览器资源
+            if hasattr(self, 'page') and self.page and not self.page.is_closed():
+                try:
+                    await self.page.close()
+                except:
+                    pass
+            
+            if hasattr(self, 'browser') and self.browser:
+                try:
+                    await self.browser.close()
+                except:
+                    pass
+            
+            if hasattr(self, 'playwright') and self.playwright:
+                try:
+                    await self.playwright.stop()
+                except:
+                    pass
+            
+            # 重新初始化
+            await self.init_browser()
+            self.write_log('浏览器重新初始化完成')
+            
+        except Exception as e:
+            self.write_log(f'浏览器重新初始化失败: {str(e)}')
+            raise e
+
     async def create_new_page(self):
         """创建新的页面"""
         try:
+            # 首先确保浏览器处于健康状态
+            if not await self.ensure_browser_ready():
+                raise Exception('浏览器初始化失败')
+            
             # 如果已有页面，先关闭它
-            if self.page:
-                await self.page.close()
-                self.write_log('已关闭旧页面')
+            if hasattr(self, 'page') and self.page and not self.page.is_closed():
+                try:
+                    await self.page.close()
+                    self.write_log('已关闭旧页面')
+                except Exception as e:
+                    self.write_log(f'关闭旧页面时出错: {str(e)}')
             
             # 创建新页面
             self.page = await self.browser.new_page()
@@ -270,7 +330,31 @@ class PlaywrightWebProxyServer:
             
         except Exception as e:
             self.write_log(f'创建新页面失败: {str(e)}')
-            raise e
+            # 如果创建页面失败，尝试重新初始化浏览器
+            try:
+                await self.reinit_browser()
+                self.page = await self.browser.new_page()
+                await self.page.set_viewport_size({"width": 1280, "height": 720})
+                await self.page.set_extra_http_headers({
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                    'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                    'Accept-Encoding': 'gzip, deflate, br',
+                    'DNT': '1',
+                    'Connection': 'keep-alive',
+                    'Upgrade-Insecure-Requests': '1',
+                    'Sec-Fetch-Dest': 'document',
+                    'Sec-Fetch-Mode': 'navigate',
+                    'Sec-Fetch-Site': 'none',
+                    'Sec-Fetch-User': '?1',
+                    'Cache-Control': 'max-age=0'
+                })
+                self.page.on('request', self.log_request)
+                self.page.on('response', self.log_response)
+                self.write_log('浏览器重新初始化后成功创建新页面')
+            except Exception as retry_error:
+                self.write_log(f'重试创建页面也失败: {str(retry_error)}')
+                raise retry_error
 
     async def init_browser(self):
         """初始化浏览器"""
@@ -363,48 +447,58 @@ class PlaywrightWebProxyServer:
     
     async def navigate_to_url(self, url: str):
         """导航到指定URL"""
-        if not self.page:
-            raise Exception('浏览器未初始化')
-        
         try:
+            # 确保浏览器和页面处于健康状态
+            if not await self.ensure_browser_ready():
+                raise Exception('浏览器不可用')
+            
+            print("------------1")
             # 使用更优化的导航选项
             await self.page.goto(url, 
                                 timeout=15000,  # 减少超时时间
                                 wait_until='domcontentloaded')  # 只等待DOM加载完成，不等待所有资源
-        except:
-            await self.page.goto(url, wait_until='load', timeout=30000)
+            print("------------1-1")
+        except Exception as e:
+            self.write_log(f'导航失败: {str(e)}')
+            # 如果导航失败，尝试重新创建页面后再次导航
+            try:
+                await self.create_new_page()
+                await self.page.goto(url, 
+                                    timeout=15000,
+                                    wait_until='domcontentloaded')
+                self.write_log(f'重新创建页面后成功导航到: {url}')
+            except Exception as retry_error:
+                self.write_log(f'重试导航也失败: {str(retry_error)}')
+                raise retry_error
     
     async def take_screenshot(self) -> str:
-        """截图（智能完整截图版本）"""
-        if not self.page:
-            raise Exception('浏览器未初始化')
-        
+        """截图并返回base64编码的图片"""
         try:
-            # 获取页面实际尺寸
-            viewport_size = await self.page.evaluate("""() => {
-                return {
-                    width: Math.max(document.documentElement.scrollWidth, window.innerWidth),
-                    height: Math.max(document.documentElement.scrollHeight, window.innerHeight)
-                };
-            }""")
-            
-            # 如果页面内容超出视窗，使用完整页面截图
-            current_viewport = await self.page.evaluate("() => ({width: window.innerWidth, height: window.innerHeight})")
-            
-            if (viewport_size['width'] > current_viewport['width'] or 
-                viewport_size['height'] > current_viewport['height']):
-                # 页面有滚动内容，使用完整页面截图
-                screenshot = await self.page.screenshot(type='png', full_page=False)
-            else:
-                # 页面内容在视窗内，使用视窗截图
-                screenshot = await self.page.screenshot(type='png', full_page=False)
+            # 确保浏览器和页面处于健康状态
+            if not await self.ensure_browser_ready():
+                raise Exception('浏览器不可用')
                 
+            screenshot = await self.page.screenshot()
+            import base64
+            return base64.b64encode(screenshot).decode('utf-8')
         except Exception as e:
-            # 备用方案：使用完整页面截图
-            screenshot = await self.page.screenshot(type='png', full_page=False)
-        screenshot = low_quality(screenshot)
-        import base64
-        return base64.b64encode(screenshot).decode('utf-8')
+            self.write_log(f'截图失败: {str(e)}')
+            # 如果截图失败，尝试重新创建页面后再次截图
+            try:
+                await self.create_new_page()
+                screenshot = await self.page.screenshot()
+                import base64
+                return base64.b64encode(screenshot).decode('utf-8')
+            except Exception as retry_error:
+                self.write_log(f'重试截图也失败: {str(retry_error)}')
+                # 返回一个空白图片的base64编码
+                import base64
+                from PIL import Image
+                import io
+                img = Image.new('RGB', (1280, 720), color='white')
+                buffer = io.BytesIO()
+                img.save(buffer, format='PNG')
+                return base64.b64encode(buffer.getvalue()).decode('utf-8')
     
     async def clear_cookies(self, websocket: WebSocket):
         """清空浏览器cookies"""
